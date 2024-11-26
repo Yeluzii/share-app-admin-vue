@@ -137,3 +137,43 @@ export interface DictConfigRes {
   updateTime: string
   value: number
 }
+
+/** 公告管理 */
+export namespace SysNotice {
+  export interface ReqGetNoticeParams extends ReqPage {
+    name?: string
+  }
+  /** 公告列表 */
+  export interface ResNoticeList {
+    pkId: number
+    title: string
+    cover: string
+    content: string
+    adminId: number
+    isTop: number
+    isSwiper: number
+    deleteFlag: number
+    createTime: string
+    updateTime: string
+  }
+  /** 公告编辑 */
+  export interface ReqEditNoticeParams {
+    pkId?: number
+    title: string
+    cover: string
+    content: string
+    adminId: number
+    isTop: number
+    isSwiper: number
+  }
+  /** 新增公告 */
+  export interface ReqAddNoticeParams {
+    pkId?: number
+    title: string
+    cover: string
+    content: string
+    adminId: number
+    isTop: number
+    isSwiper: number
+  }
+}
