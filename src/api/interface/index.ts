@@ -177,3 +177,95 @@ export namespace SysNotice {
     isSwiper: number
   }
 }
+
+/** 标签管理 */
+export namespace SysTag {
+  export interface ReqGetTagParams extends ReqPage {
+    name?: string
+  }
+  /** 标签列表 */
+  export interface ResTagList {
+    pkId: number
+    title: string
+    description: string
+    isHot: string
+    deleteFlag: number
+    createTime: string
+    updateTime: string
+  }
+  /** 标签修改 */
+  export interface ReqEditTagParams {
+    title: string
+    description: string
+    isHot: string
+  }
+  /** 新增标签 */
+  export interface ReqAddTagParams {
+    title: string
+    description: string
+    isHot: string
+  }
+}
+
+/** 分类管理 */
+export namespace SysCategory {
+  export interface ReqGetCategoryParams extends ReqPage {
+    name?: string
+  }
+  /** 分类列表 */
+  export interface ResCategoryList {
+    pkId: number
+    title: string
+    type: number
+    description: string
+    deleteFlag: number
+    createTime: string
+    updateTime: string
+  }
+  /** 分类编辑 */
+  export interface ReqEditCategoryParams {
+    title: string
+    type: number
+    description: string
+  }
+  /** 新增分类 */
+  export interface ReqAddCategoryParams {
+    title: string
+    type: number
+    description: string
+  }
+}
+
+/** 资源管理 */
+export namespace SysResource {
+  /** 资源请求参数 */
+  export interface ReqGetResourceParams extends ReqPage {
+    name?: string
+  }
+  /** 资源列表 */
+  export interface ResResourceList {
+    pkId: number
+    title: string
+    author: number
+    diskType: number
+    resType: number
+    tags: string[]
+    downloadUrl: string
+    detail: string
+    price: number
+    likeNum: number
+    isTop: number
+    status: number
+    remark: string
+    deleteFlag: number
+    createTime: string
+    updateTime: string
+    tagList: string[]
+    resTypeList: string[]
+  }
+  export interface ReqAuditResource {
+    pkId: number
+    status: number
+    remark: string
+  }
+}
